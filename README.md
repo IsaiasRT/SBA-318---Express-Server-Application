@@ -32,8 +32,8 @@
 
 
 ## 📝 Requirements
-- [] Create and use at least two pieces of custom middleware. (5%)
-- [] Create and use error-handling middleware (5%).
+- [X] Create and use at least two pieces of custom middleware. (5%)
+- [X] Create and use error-handling middleware (5%).
 - [] Use at least three different data categories(e.g., users, posts or comments) (5%) 
 - [X] Utilize reasonable data structuring practices (5%) 
 - [X] Create GET routes for all data that should be exposed to the client. (5%) 
@@ -57,7 +57,14 @@ If you are stuck on how to approach this, think about ways you could render the 
 - ## 🔗 References
 
 - https://www.youtube.com/watch?v=l8WPWK9mS5M
+
 - https://www.npmjs.com/package/uuid
+
+- https://expressjs.com/en/guide/using-middleware.html
+
+- https://expressjs.com/en/guide/error-handling.html
+
+- https://expressjs.com/en/guide/writing-middleware.html
 
 ## ⏰ Timeline Estimado
 
