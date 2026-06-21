@@ -1,0 +1,16 @@
+<%- include('partials/header', { title: 'Comments' }) %>
+  <h1>Comments</h1>
+  <ul>
+    <% comments.forEach(c => { %>
+    <li>
+      <% if (c.text) { %><p><%= c.text %></p><% } %>
+      <% if (c.author) { %><small>by <%= c.author %></small><% } %>
+    </li>
+    <% }) %>
+  </ul>
+  <form action="/comments" method="POST">
+    <input name="text" placeholder="Comment text" required>
+    <input name="author" placeholder="Your name">
+    <button type="submit">Post Comment</button>
+  </form>
+<%- include('partials/footer') %>

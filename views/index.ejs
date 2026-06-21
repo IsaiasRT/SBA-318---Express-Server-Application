@@ -1,0 +1,18 @@
+<%- include('partials/header', { title: 'Home' }) %>
+  <h1>Welcome to the Express API Dashboard</h1>
+  <p>Manage your data through the navigation links above or use the API endpoints directly.</p>
+  <div class="cards">
+    <div class="card">
+      <h2><a href="/users-view">Users</a></h2>
+      <p><%= userCount %> registered users</p>
+    </div>
+    <div class="card">
+      <h2><a href="/posts-view">Posts</a></h2>
+      <p><%= postCount %> posts created</p>
+    </div>
+    <div class="card">
+      <h2><a href="/comments-view">Comments</a></h2>
+      <p><%= commentCount %> comments posted</p>
+    </div>
+  </div>
+<%- include('partials/footer') %>

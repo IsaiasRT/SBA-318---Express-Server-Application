@@ -52,7 +52,7 @@ If you are stuck on how to approach this, think about ways you could render the 
 - [X] Ensure that the program runs without errors (comment out things that do not work, and explain your blockers - you can still receive partial credit). (10%)
 - [X] Commit frequently to the git repository. (5%)
 - [X] Include a README file that contains a description of your application. (2%)
-- [] Level of effort displayed in creativity, presentation, and user experience. (5%)
+- [X] Level of effort displayed in creativity, presentation, and user experience. (5%)
 
 - ## 🔗 References
 

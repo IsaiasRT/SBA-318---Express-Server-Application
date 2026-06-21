@@ -1,0 +1,18 @@
+<%- include('partials/header', { title: 'Posts' }) %>
+  <h1>Posts</h1>
+  <ul>
+    <% posts.forEach(p => { %>
+    <li>
+      <strong><%= p.title || 'Untitled' %></strong>
+      <% if (p.content) { %><p><%= p.content %></p><% } %>
+      <% if (p.author) { %><small>by <%= p.author %></small><% } %>
+    </li>
+    <% }) %>
+  </ul>
+  <form action="/posts" method="POST">
+    <input name="title" placeholder="Title" required>
+    <input name="content" placeholder="Content">
+    <input name="author" placeholder="Author">
+    <button type="submit">Create Post</button>
+  </form>
+<%- include('partials/footer') %>

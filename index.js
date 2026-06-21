@@ -1,7 +1,7 @@
 import express from 'express';
 import userRoutes, { users } from './routes/users.js';
-import postRoutes from './routes/posts.js';
-import commentRoutes from './routes/comments.js';
+import postRoutes, { posts } from './routes/posts.js';
+import commentRoutes, { comments } from './routes/comments.js';
 import createError from './utilities/error.js';
 
 const app = express();
@@ -35,12 +35,23 @@ app.use('/posts', postRoutes);
 app.use('/comments', commentRoutes);
 
 app.get('/', (req, res) => {
-  console.log('[TEST]!');
-  res.send('Hello from Homepage.');
+  res.render('index', {
+    userCount: users.length,
+    postCount: posts.length,
+    commentCount: comments.length
+  });
 });
 
 app.get('/users-view', (req, res) => {
   res.render('users', { users });
+});
+
+app.get('/posts-view', (req, res) => {
+  res.render('posts', { posts });
+});
+
+app.get('/comments-view', (req, res) => {
+  res.render('comments', { comments });
 });
 
 app.use((req, res, next) => {

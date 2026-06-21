@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
+<%- include('partials/header', { title: 'Users' }) %>
   <h1>Users</h1>
-  <ul><% users.forEach(u => { %>
-    <li><%= u.firstName %> <%= u.lastName %>, <%= u.age %></li>
-  <% }) %></ul>
+  <ul>
+    <% users.forEach(u => { %>
+    <li><%= u.firstName || '?' %> <%= u.lastName || '?' %><% if (u.age) { %>, <%= u.age %> years old<% } %></li>
+    <% }) %>
+  </ul>
   <form action="/users" method="POST">
-  <input name="firstName" placeholder="First name">
-  <input name="lastName" placeholder="Last name">
-  <input name="age" type="number" placeholder="Age">
-  <button type="submit">Create User</button>
-</form>
-</body>
-</html>
+    <input name="firstName" placeholder="First name" required>
+    <input name="lastName" placeholder="Last name">
+    <input name="age" type="number" placeholder="Age">
+    <button type="submit">Create User</button>
+  </form>
+<%- include('partials/footer') %>
