@@ -18,39 +18,29 @@ let users = [
 ];
 
 
-
+//filter by age 
 router.get('/', (req, res) => {
-  res.send(users);
+  const { age } = req.query;
+  let result = users;
+  if (age) result = users.filter(u => u.age === Number(age));
+  res.json(result);
 });
 
 router.post('/', (req, res) => {
-
- 
   const user = req.body;
-
-  users.push({ ...user, id: uuidv4()});
-
-
-
+  users.push({ ...user, id: uuidv4() });
   res.send(`user with the name ${user.firstName} has added successfully!`);
-
-  
 });
 
-
 router.get('/:id', (req, res) => {
-  const {id} = req.params;
-
- const findUser = users.find(user => user.id === id);
-
+  const { id } = req.params;
+  const findUser = users.find(user => user.id === id);
   res.send(findUser);
 });
 
 router.delete('/:id', (req, res) => {
-  const {id} = req.params;
-
- users = users.filter((user) => user.id !== id);
-
+  const { id } = req.params;
+  users = users.filter((user) => user.id !== id);
   res.send(`The user with the ID ${id} was successfully deleted`);
 });
 

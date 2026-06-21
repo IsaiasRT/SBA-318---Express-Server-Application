@@ -34,7 +34,7 @@
 ## 📝 Requirements
 - [X] Create and use at least two pieces of custom middleware. (5%)
 - [X] Create and use error-handling middleware (5%).
-- [] Use at least three different data categories(e.g., users, posts or comments) (5%) 
+- [X] Use at least three different data categories(e.g., users, posts or comments) (5%) 
 - [X] Utilize reasonable data structuring practices (5%) 
 - [X] Create GET routes for all data that should be exposed to the client. (5%) 
 - [X] Create POST routes for data, as appropiate. At least one data category should allow for client creation via a POST request. (5%)  
