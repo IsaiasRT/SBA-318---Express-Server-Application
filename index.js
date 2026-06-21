@@ -1,6 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import userRoutes from './routes/users.js';
+import postRoutes from './routes/posts.js';
+import commentRoutes from './routes/comments.js';
 import createError from './utilities/error.js';
 
 const app = express();
@@ -25,7 +27,10 @@ const requestTimer = (req, res, next) => {
 app.use(logger);
 app.use(requestTimer);
 
+//routes
 app.use('/users', userRoutes);
+app.use('/posts', postRoutes);
+app.use('/comments', commentRoutes);
 
 app.get('/', (req, res) => {
   console.log('[TEST]!');
@@ -42,4 +47,4 @@ app.use((err, req, res, next) => {
   res.json({ error: { status: err.status || 500, message: err.message } });
 });
 
-app.listen(PORT, () => console.log(`server running on port: http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`server running on port: http://localhost:${PORT}`));  

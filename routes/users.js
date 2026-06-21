@@ -17,9 +17,7 @@ let users = [
   }*/
 ];
 
-// routes start with /users
-// TODO: Add route-level middleware here (e.g., validation middleware for POST/PATCH)
-// Example: router.use(someMiddleware) to run on all /users routes
+
 
 router.get('/', (req, res) => {
   res.send(users);
