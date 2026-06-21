@@ -1,6 +1,5 @@
 import express from 'express';
-import bodyParser from 'body-parser';
-import userRoutes from './routes/users.js';
+import userRoutes, { users } from './routes/users.js';
 import postRoutes from './routes/posts.js';
 import commentRoutes from './routes/comments.js';
 import createError from './utilities/error.js';
@@ -8,7 +7,11 @@ import createError from './utilities/error.js';
 const app = express();
 const PORT = 3000;
 
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
+app.set('view engine', 'ejs');
+app.set('views', './views');
 
 const logger = (req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
@@ -27,15 +30,17 @@ const requestTimer = (req, res, next) => {
 app.use(logger);
 app.use(requestTimer);
 
-//routes
 app.use('/users', userRoutes);
 app.use('/posts', postRoutes);
 app.use('/comments', commentRoutes);
 
 app.get('/', (req, res) => {
   console.log('[TEST]!');
-
   res.send('Hello from Homepage.');
+});
+
+app.get('/users-view', (req, res) => {
+  res.render('users', { users });
 });
 
 app.use((req, res, next) => {

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Users</h1>
+  <ul><% users.forEach(u => { %>
+    <li><%= u.firstName %> <%= u.lastName %>, <%= u.age %></li>
+  <% }) %></ul>
+  <form action="/users" method="POST">
+  <input name="firstName" placeholder="First name">
+  <input name="lastName" placeholder="Last name">
+  <input name="age" type="number" placeholder="Age">
+  <button type="submit">Create User</button>
+</form>
+</body>
+</html>

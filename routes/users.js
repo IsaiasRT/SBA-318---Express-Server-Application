@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   const user = req.body;
-  users.push({ ...user, id: uuidv4() });
+   users.push({ ...user, id: uuidv4() });
   res.send(`user with the name ${user.firstName} has added successfully!`);
 });
 
@@ -58,5 +58,6 @@ router.patch('/:id', (req, res) => {
 
 
 
+export { users };
 export default router;
 
