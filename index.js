@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 
 const logger = (req, res, next) => {
-  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.originalUrl}`);
   next();
 };
 

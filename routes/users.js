@@ -29,7 +29,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   const user = req.body;
    users.push({ ...user, id: uuidv4() });
-  res.send(`user with the name ${user.firstName} has added successfully!`);
+  res.send(`user ${user.firstName} was added successfully!`);
 });
 
 router.get('/:id', (req, res) => {
